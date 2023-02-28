@@ -1,3 +1,26 @@
+<?php 
+    $submit = filter_input(INPUT_POST,'submit', FILTER_SANITIZE_STRING);
+    $image = '';
+    if( isset($submit)){
+
+        $name = filter_input(INPUT_POST,'name', FILTER_SANITIZE_STRING);
+        $email = filter_input(INPUT_POST,'email', FILTER_SANITIZE_STRING);
+        $cell = filter_input(INPUT_POST,'cell', FILTER_SANITIZE_STRING);
+        $age = filter_input(INPUT_POST,'age', FILTER_SANITIZE_STRING);
+        $gander = filter_input(INPUT_POST,'gander', FILTER_SANITIZE_STRING);
+        $location = filter_input(INPUT_POST,'location', FILTER_SANITIZE_STRING);
+        $image = $_FILES['image']['name'];
+        $image = $_FILES['image']['tmp_name'];
+
+        if(  $name != empty('') || $email != empty('') || $cell != empty('') || $age != empty('') || $gander != empty('') || $location != empty('') || $name != empty('') ){
+            $message = "<p class='alert alert-warning alert-dismissible fade show' role='alert'> Plasee Put Your Data Here ! <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></p>";
+        }
+    }
+
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +47,11 @@
                     <div class="card w-75 p-5">
                         <h2>Add New Students</h2>
                         <div class="card-body">
-                           <form action="" method="">
+                            <?php if(isset($message)){
+                                    echo  $message;
+                                } 
+                            ?>
+                           <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data">
                                 <label for="name" class="form-label">Full Name</label>
                                 <input name="name" type="text" class="form-control" id="name">
 
@@ -38,8 +65,8 @@
                                 <input name="age" type="text" class="form-control" id="age">
 
                                 <label for="gander" class="form-label">Gander</label><br>
-                                <input type="radio" name="ganger" id="male" value="male"><label for="male">Male</label>
-                                <input type="radio" name="ganger" id="female" value="female"><label for="female">Female</label><br><br>
+                                <input type="radio" name="gander" id="male" value="male"><label for="male">Male</label>
+                                <input type="radio" name="gander" id="female" value="female"><label for="female">Female</label><br><br>
                                 
                                 <label for="address" class="form-label">Location</label>
                                 <select class="form-control" name="location" id="">
@@ -54,7 +81,7 @@
                                 <label for="image" class="form-label">Cell</label>
                                 <input name="image" type="file" class="form-control" id="image"><br>
 
-                                <input class="btn btn-info" name="submit" type="submit" value="Add New">
+                                <input class="btn btn-info" name="submit" type="submit" value="Add Student">
                            </form>
                         </div>
                     </div>

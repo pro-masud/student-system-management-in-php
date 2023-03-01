@@ -12,10 +12,14 @@
         $email = filter_input(INPUT_POST,'email', FILTER_SANITIZE_STRING);
         $cell = filter_input(INPUT_POST,'cell', FILTER_SANITIZE_STRING);
         $age = filter_input(INPUT_POST,'age', FILTER_SANITIZE_STRING);
-        $gander = $_POST['gander'];
+       
+        // gander select here
+        if(isset($_POST['gander'])){
+            $gander = $_POST['gander'];
+        }
+
         $location = filter_input(INPUT_POST,'location', FILTER_SANITIZE_STRING);
-        $image = $_FILES['image']['name'];
-        $image = $_FILES['image']['tmp_name'];
+       
 
         if(  $name != empty('') || $email != empty('') || $cell != empty('') || $age != empty('') || $gander != empty('') || $location != empty('') || $name != empty('') ){
             $message = "<p class='alert alert-warning alert-dismissible fade show' role='alert'> Plasee Put Your Data Here ! <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></p>";
@@ -23,7 +27,17 @@
             $message = "<p class='alert alert-warning alert-dismissible fade show' role='alert'> Email Is Invalied ! <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></p>";
         }elseif( $age < 18 || $age > 100 ){
             $message = "<p class='alert alert-warning alert-dismissible fade show' role='alert'> You Are Not A Memeber This Apps ! <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></p>";
+        }else{
+            $message = studentImageUpload($_FILES['image'], './student-upload-image/',['png','jpg','jpeg'], [
+                "type"          => "image",
+                "file_name"     => "JavaScript",
+                "fname"         => $name,
+                "lname"         => $location
+
+            ]);
         }
+
+      
 
     }
 

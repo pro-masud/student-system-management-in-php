@@ -1,20 +1,30 @@
 <?php 
+    include_once"./function.php";
     $submit = filter_input(INPUT_POST,'submit', FILTER_SANITIZE_STRING);
-    $image = '';
+
+    // selected add student form one selected here option now
+    $studentOptions = ['Haripur','Chawarangi Bazar','Pahargong','Kamalpukur','ranisonkol'];
+
+    // this form validation here
     if( isset($submit)){
 
         $name = filter_input(INPUT_POST,'name', FILTER_SANITIZE_STRING);
         $email = filter_input(INPUT_POST,'email', FILTER_SANITIZE_STRING);
         $cell = filter_input(INPUT_POST,'cell', FILTER_SANITIZE_STRING);
         $age = filter_input(INPUT_POST,'age', FILTER_SANITIZE_STRING);
-        $gander = filter_input(INPUT_POST,'gander', FILTER_SANITIZE_STRING);
+        $gander = $_POST['gander'];
         $location = filter_input(INPUT_POST,'location', FILTER_SANITIZE_STRING);
         $image = $_FILES['image']['name'];
         $image = $_FILES['image']['tmp_name'];
 
         if(  $name != empty('') || $email != empty('') || $cell != empty('') || $age != empty('') || $gander != empty('') || $location != empty('') || $name != empty('') ){
             $message = "<p class='alert alert-warning alert-dismissible fade show' role='alert'> Plasee Put Your Data Here ! <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></p>";
+        }elseif( filter_var($email, FILTER_VALIDATE_EMAIL) == false){
+            $message = "<p class='alert alert-warning alert-dismissible fade show' role='alert'> Email Is Invalied ! <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></p>";
+        }elseif( $age < 18 || $age > 100 ){
+            $message = "<p class='alert alert-warning alert-dismissible fade show' role='alert'> You Are Not A Memeber This Apps ! <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></p>";
         }
+
     }
 
 
@@ -53,33 +63,30 @@
                             ?>
                            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data">
                                 <label for="name" class="form-label">Full Name</label>
-                                <input name="name" type="text" class="form-control" id="name">
+                                <input value="<?php if( isset($name)){ echo $name;} ?>" name="name" type="text" class="form-control" id="name">
 
                                 <label for="email" class="form-label">Email</label>
-                                <input name="email" type="text" class="form-control" id="email">
+                                <input value="<?php if( isset($email)){ echo $email;} ?>" name="email" type="eamil" class="form-control" id="email">
 
                                 <label for="cell" class="form-label">Cell</label>
-                                <input name="cell" type="text" class="form-control" id="cell">
+                                <input value="<?php if( isset($cell)){ echo $cell;} ?>" name="cell" type="text" class="form-control" id="cell">
 
                                 <label for="age" class="form-label">Age</label>
-                                <input name="age" type="text" class="form-control" id="age">
+                                <input value="<?php if( isset($age)){ echo $age;} ?>" name="age" type="text" class="form-control" id="age">
 
                                 <label for="gander" class="form-label">Gander</label><br>
-                                <input type="radio" name="gander" id="male" value="male"><label for="male">Male</label>
-                                <input type="radio" name="gander" id="female" value="female"><label for="female">Female</label><br><br>
+                                <input type="radio" name="gander[]" id="male" value="male" <?php checkRadio('male'); ?> ><label for="male">Male</label>
+                                <input type="radio" name="gander[]" id="female" value="female" <?php checkRadio('female'); ?>><label for="female">Female</label><br><br>
                                 
                                 <label for="address" class="form-label">Location</label>
-                                <select class="form-control" name="location" id="">
+                                <select value="" class="form-control" name="location" id="">
                                     <option value="">-- Select --</option>
-                                    <option value="haripur">Haripur</option>
-                                    <option value="Chawrangi bazar">Chawarangi Bazar</option>
-                                    <option value="pahargong">Pahargong</option>
-                                    <option value="kamalpukur">Kamalpukur</option>
-                                    <option value="ranisonkol">Ranisongkol</option>
+                                    <?php studentOptionBox($studentOptions); ?>
+                                    
                                 </select>
 
                                 <label for="image" class="form-label">Cell</label>
-                                <input name="image" type="file" class="form-control" id="image"><br>
+                                <input value="" name="image" type="file" class="form-control" id="image"><br>
 
                                 <input class="btn btn-info" name="submit" type="submit" value="Add Student">
                            </form>

@@ -1,5 +1,6 @@
 <?php 
 
+
 // student gander checked box selected here function
 function checkRadio($value){
     if( isset($_POST['gander']) && is_array($_POST['gander']) && in_array($value, $_POST['gander'] )){
@@ -51,13 +52,19 @@ function studentImageUpload($file , $location = '', $file_format = ['png','jpg',
         $file_name = date('d_m_Y_g_h_s'). '_' . $file_types['file_name'] . '_' . $file_types['fname'] .'_' . $file_types['lname'] . '.'  . $file_extiantion;
     }
 
-
+    $messa = '';
     // students file formats system here now
     if( in_array( $file_extiantion, $file_format )  == false ){
-        return "<p class='alert alert-warning alert-dismissible fade show' role='alert'> Invalide Your File Format ! <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></p>";
+        $messa = "<p class='alert alert-warning alert-dismissible fade show' role='alert'> Invalide Your File Format ! <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></p>";
     }else{
         move_uploaded_file($file_tmp_name, $location.$file_name);
     }
 
+    return [
+        'mess'  => $messa,
+        'file_name' =>  $file_name,
+    ];
     
 }
+
+

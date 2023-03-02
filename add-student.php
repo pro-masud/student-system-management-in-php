@@ -1,5 +1,6 @@
 <?php 
     include_once"./function.php";
+    require_once"./apps/connection.php";
     $submit = filter_input(INPUT_POST,'submit', FILTER_SANITIZE_STRING);
 
     // selected add student form one selected here option now
@@ -12,38 +13,47 @@
         $email = filter_input(INPUT_POST,'email', FILTER_SANITIZE_STRING);
         $cell = filter_input(INPUT_POST,'cell', FILTER_SANITIZE_STRING);
         $age = filter_input(INPUT_POST,'age', FILTER_SANITIZE_STRING);
+
+        
        
         // gander select here
         if(isset($_POST['gander'])){
-            $gander = $_POST['gander'];
+            $gander = $_POST['gander']['0'];
         }
 
         $location = filter_input(INPUT_POST,'location', FILTER_SANITIZE_STRING);
+
+        $photos = $_FILES['image']['tmp_name'];
        
 
-        if(  $name != empty('') || $email != empty('') || $cell != empty('') || $age != empty('') || $gander != empty('') || $location != empty('') || $name != empty('') ){
+        if(  $name != empty('') || $email != empty('') || $cell != empty('') || $age != empty('') || $gander != empty('') || $location != empty('') || $photos != empty('') ){
             $message = "<p class='alert alert-warning alert-dismissible fade show' role='alert'> Plasee Put Your Data Here ! <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></p>";
         }elseif( filter_var($email, FILTER_VALIDATE_EMAIL) == false){
             $message = "<p class='alert alert-warning alert-dismissible fade show' role='alert'> Email Is Invalied ! <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></p>";
         }elseif( $age < 18 || $age > 100 ){
             $message = "<p class='alert alert-warning alert-dismissible fade show' role='alert'> You Are Not A Memeber This Apps ! <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></p>";
         }else{
-            $message = studentImageUpload($_FILES['image'], './student-upload-image/',['png','jpg','jpeg'], [
-                "type"          => "image",
-                "file_name"     => "JavaScript",
-                "fname"         => $name,
-                "lname"         => $location
-
+            $data = studentImageUpload($_FILES['image'], './student-upload-image/', ['js','css'], [
+                'type' => 'file',
+                'file_name' => 'JavaScript',
+                'fname'     => $name,
+                'lname'     => $location,
+            
             ]);
+
+            $photo = $data['file_name'];
+
+
+
+            if( !empty($data['mess'])){
+                $message= $data['mess'];
+            }else{
+                $sql = "INSERT INTO students (student_name , student_email, student_cell, student_age, student_gander, student_location, student_img, status) VALUES ('$name','$email','$cell','$age','$gander',' $location','$photo','active')";
+                $connection -> query($sql);
+                $message = "<p class='alert alert-success alert-dismissible fade show' role='alert'> Student Data Insert Successfully ! <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></p>";
+            }
         }
-
-      
-
     }
-
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -51,7 +61,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Human Appeal</title>
+    <title>Student management system</title>
     <!-- fonts-awosame -->
     <link rel="stylesheet" href="./css/all.css">
     <!-- Main style file -->

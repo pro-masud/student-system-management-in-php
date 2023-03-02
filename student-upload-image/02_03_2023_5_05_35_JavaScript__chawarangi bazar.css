@@ -1,0 +1,572 @@
+@media screen and (max-width: 1200px){
+    .campaign-box-left{
+        width: 295px;
+        height: 400px;
+        background: #FFFFFF;
+        border-radius: 9px;
+        padding: 10px 20px;
+    }
+    .cons_btn button{
+        padding: 8px 6px;
+    }
+    .campaign_donet_btn{
+        margin-top: 20px;
+    }
+    .campaign_donet_btn button{
+        padding: 10px 30px;
+    }
+    .campaign-box-right h5{
+        font-size: 14px;
+    }
+    .campaign-box-right h2{
+        font-size: 40px;
+    }
+    .campaign-box-right p{
+        font-size: 16px;
+    }
+    
+    
+    .instagram_img img {
+        width: 228.16px;
+        height: 230.07px;
+    }
+   
+    .post-img img {
+        max-width: 220px;
+        height: 225px;
+    }
+}
+
+@media screen and (max-width: 991px){
+    .top-nav{
+        display:none;
+    }
+    .nav_bar{
+        display:none !important;
+    }
+  
+    .hunger{
+        width: 400px;
+        height: 300px;
+        padding: 30px;
+        margin-top: 30px;
+    }
+    .hunger_btn button:first-child{
+        font-size: 16px;
+    }
+    .hunger_btn button:last-child{
+        font-size: 16px;
+    }
+    /* section 2 responsive */
+    .emergency_right{
+        margin-top: 50px;
+    }
+    /* section 4 responsive */
+    .our_title p{
+        width: 100%;
+    }
+    .our_pro{
+        width: 250px;
+        height: 200px;
+        border-radius: 10px;
+    }
+    .our_pro button img{
+        width:60px;
+        height: 50px;
+    }
+    .our_pro button p{
+        font-size: 16px;
+    }
+    .campaign-box-left{
+        width: 100%;
+    }
+    .our_pro button a{
+        width: 35px;
+        height: 35px;
+    }
+    .our_pro button a i{
+        font-size: 14px;
+    }
+
+    /* section 7 responsive */
+    .ongoingporject{
+        height: auto;
+    }
+
+    /* section 8 responsive */
+    .instagram_img img{
+        width: 170.16px;
+        height: 190.07px;
+    }
+
+    /* section  */
+    
+    .campaign-box-right{
+        margin-top: 52px;
+    }
+    .campaign-box-right h5{
+        width: 100%;
+    }
+    .campaign-box-right h2{
+        width: 100%;
+    }
+    .campaign-img img{
+        width: 100%;
+    }
+    .campaign_donet_btn button{
+        padding: 6px 36px;
+    }
+   
+    .project-info h3 {
+        font-size: 18px;
+        margin-top: 7px;
+    }
+    .project-btn a {
+        padding: 8px 0px;
+        text-align: center;
+        font-size: 14.442px;
+        line-height: 22px;
+      }
+    .project-title {
+        width: 100%;
+        height: 38px;
+    }
+    .project-title h2{
+        font-size: 16px;
+    }
+   
+    .member-item{
+        border: 2px solid #000000;
+        margin-bottom: 25px;  
+    }
+    .m-active{
+        border: 2px solid #FF810D;
+    }
+    .member-item:hover {
+        border: 2px solid #FF810D;
+    }
+   
+    .member-info h4 {
+        font-size: 16px;
+        text-align: unset;
+    }
+    .member-info .option{
+        width: 22px;
+        height: 22px;
+    }
+   
+    .widget-item{
+        margin-top: 40px;
+    }
+
+    .testi-lg-img{
+        max-width: 100%;
+        margin: 18px 0;
+     
+    }
+    .testi-md-img{
+        max-width: 100%;
+      
+    }
+    .fm-btn{
+        margin-left:0px;
+    }
+    .vistion-misstion{
+        flex-direction: column;
+    }
+    .contact-log {
+        height: 871px;
+    }
+    .log-btn input{
+        width: 100%;
+    }
+    .volunteer-img{
+        max-width: 100%;
+        margin-top: 20px;
+    }
+    .modal_item{
+        max-width: 25%;
+    }
+    .footer-copy-right-text p{
+        font-size: 18px;
+        line-height: 23px;
+        text-align: center;
+    }
+    .footer-right-link{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .footer-right-link a{
+        font-size: 18px;
+        line-height: 23px;
+    }
+    
+}
+@media screen and (max-width: 768px){
+    .section1{
+        height: 530px;
+    }
+    .hunger{
+        max-width: 420px;
+        width: 100%;
+        height: 270px;
+    }
+    .hunger h2{
+        font-size: 30px;
+    }
+    .hunger_btn{
+        margin-top: 50px;
+    }
+    .hunger_btn button{
+        font-size: 18px;
+    }
+    /* section 2 responsive */
+    .emergency_left h2{
+        font-size: 32px;
+    }
+    .emergency_right{
+        width: 455px;
+        height: 220px;
+    }
+    .energency_btn{
+        margin-top: 20px;
+    }
+    /* section 3 responsive */
+    .section3{
+        padding: 50px;
+    }
+    
+    .about_user p{
+        font-size: 15px;
+        line-height: 25px;
+    }
+    .about_user a{
+        margin-top: 5px;
+    }
+    .about_info h5{
+        font-size: 14px;
+    }
+    .about_info h2{
+        font-size: 40px;
+        line-height: 45px;
+    }
+    .about_info > a{
+        padding: 12px 20px;
+        margin: 20px 0;
+    }
+    .about_video{
+        height: 210px;
+        margin-top: 54px;
+    }
+    /* section 4 responsive */
+    .our_title p{
+        width: 100%;
+    }
+    .modal_item{
+        margin: 30px 0px;
+    }
+    .ongoingporject{
+            max-width: 100%;
+            width: 100%;
+            height: auto;
+    }
+    /* section 8 responsive */
+    .instagram_img img{
+        max-width: 500.16px;
+        height: 250.07px;
+    }
+    .campaign-box-right h5{
+        width: 100%;
+    }
+   
+    .project-box{
+        margin-top: 40px;
+    }
+    .project-img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .member-img {
+        max-width: 100%;
+        height: 100%;
+    }
+    .f-message h3 {
+        font-size: 30px;
+    }
+    .fonder-head{
+        flex-direction: column;
+    }
+    .fm-btn{
+        margin-top: 20px;
+    }
+    .misstion{
+        flex-direction: column;
+        height: 470px;
+    }
+    .misstion-item{
+        padding: 30px;
+        text-align: center;
+    }
+    .post-img img {
+        width: 100%;
+        height: 100%;
+    }
+    .TopwatchFe_item{
+        max-width: 155px;
+        height: 117px;
+    }
+    .modal_item{
+        max-width: 33%;
+    }
+    .ms-auto{
+        margin-left: 0 !important;
+    }
+    .founder_btn{
+        margin-top:10px;
+    }
+
+}
+
+@media screen and (max-width: 576px){
+  /* section 2 responsive now */
+  .emergency_left h2{
+        font-size: 26px;
+        line-height: 30px;
+    }
+    .emergency_right{
+        width: 380px;
+        height: 220px;
+        margin-top: 30px;
+    }
+    .energency_btn{
+        margin-top: 15px;
+    }
+    /* section 3 responsive */
+    .section3{
+        padding: 30px;
+    }
+    
+    .about_video{
+        height: 210px;
+        margin-top: 14px;
+    }
+    /* section 4 responsive */
+   .modal_item{
+        margin: 20px 0px;
+   }
+
+   /* section 6 responsive */
+   .working-right h2{
+        font-size: 30px;
+        text-align: center;
+    }
+    .working-right {
+        font-size: 16px;
+        text-align: center;
+    }
+    .working-left h2{
+        font-size: 30px;
+        text-align: center;
+    }
+    .working-left {
+        font-size: 16px;
+        text-align: center;
+    }
+    .ongoingporject{
+        max-width: 100%;
+    }
+    /* section 8 responsive */
+    .instagram_img img{
+        max-width: 400.16px;
+        height: 250.07px;
+    }
+    /* campaine section now */
+    
+   
+    .f-message h3 {
+        font-size: 26px;
+        line-height: 30px;
+    }
+    .ourproject{
+        padding: 70px 30px;
+    }
+
+    .model_right h2{
+        margin-top: 20px;
+        font-size: 30px;
+        line-height: 30px;
+    }
+
+    .model_right p{
+        font-size: 15px;
+    }
+    .model_btn a{
+        font-size: 14px;
+        line-height: 23px;
+        padding: 10px 20px;
+        margin: 0px;
+        padding: 6px 16px;
+    }
+    .modal_cont {
+        padding: 1rem !important;
+    }
+    .hunger{
+        max-width: 350px;
+        width: 100%;
+        height: 220px;
+    }
+    .hunger h2{
+        font-size: 24px;
+    }
+    .hunger_btn{
+        margin-top: 30px;
+    }
+    .hunger_btn a:first-child{
+        font-size: 14px;
+    }
+    .hunger_btn a:last-child{
+        font-size: 14px;
+    }
+    .TopwatchFe_item{
+        max-width: 120px;
+        height: 100px;
+    }
+    .TopwatchFe_item h3{
+        font-size: 16px;
+        line-height: 13px;
+    }
+    .TopwatchFe_item p{
+        font-size: 14px;
+        line-height: 15px;
+    }
+   
+    .modal_item{
+        max-width: 50%;
+    }
+
+
+
+    
+}
+
+@media screen and (max-width: 480px){
+    .emergency_right{
+       width:100%;
+        height: 220px;
+        margin-top: 30px;
+    }
+    .f-message h3 {
+        font-size: 18px;
+        line-height: 20px;
+    }
+    .contact-log {
+        padding: 40px;
+    }
+    .hunger_btn a:first-child{
+        font-size: 12px !important;
+        padding:4px;
+    }
+     .hunger_btn a:last-child{
+        font-size: 12px !important;
+        padding:4px;
+    }
+    .emergency_right h2{
+        font-size: 18px !important;
+        line-height: 20px;
+    }
+     .emergency_right p{
+        font-size: 12px !important;
+        line-height: 20px;
+    }
+    .energency_btn a{
+       font-size: 9px !important;
+       margin: 0px 2px;
+       padding: 2px;
+    }
+    .emergency{
+        padding: 45px !important;
+    }
+    .model_btn{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .modal_cont {
+        padding: 0rem !important;
+    }
+    .model_right h2{
+        margin-top: 15px;
+        font-size: 25px;
+        line-height: 28px;
+    }
+    .modal_item{
+        max-width: 100%;
+    }
+    .TopwatchFe_item {
+        max-width: 110px;
+        height: 80px;
+    }
+    .TopwatchFe_item h3 {
+        font-size: 14px;
+        line-height: 0px;
+    }
+    .TopwatchFe_item p {
+        font-size: 10px;
+        line-height: 11px;
+    }
+    .TopwatchFe_item img {
+        max-width: 45px;
+        position: absolute;
+        top: 22px;
+        right: -33px;
+    }
+    .founder_btn a{
+        background-color: #FFFFFF !important;
+        padding: 6px 12px;
+        font-size: 14px;
+        line-height: 18px;
+    }
+    .founderm-header p{
+        font-size: 12px;
+        line-height: 150%;
+    }
+    .fonder-head h2{
+        font-size: 22px;       
+    }
+    
+
+
+}
+
+@media screen and (max-width: 375px){
+
+    .TopwatchFe_item {
+        max-width: 90px;
+        height: 60px;
+    }
+    .TopwatchFe_item img {
+        max-width: 40px;
+        position: absolute;
+        top: 12px;
+        right: -33px;
+    }
+    .TopwatchFe_item h3 {
+        padding-top: 30px;
+    }
+
+    .founder_btn a{
+        background-color: #FFFFFF !important;
+        padding: 5px 10px;
+        font-size: 12px;
+        line-height: 16px;
+    }
+    .founderm-header p{
+        font-size: 12px;
+        line-height: 150%;
+    }
+
+    
+
+}

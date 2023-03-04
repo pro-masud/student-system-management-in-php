@@ -33,8 +33,8 @@
         }elseif( $age < 18 || $age > 100 ){
             $message = "<p class='alert alert-warning alert-dismissible fade show' role='alert'> You Are Not A Memeber This Apps ! <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></p>";
         }else{
-            $data = studentImageUpload($_FILES['image'], './student-upload-image/', ['js','css'], [
-                'type' => 'file',
+            $data = studentImageUpload($_FILES['image'], './student-upload-image/', ['png','jpg','jpeg'], [
+                'type' => 'image',
                 'file_name' => 'JavaScript',
                 'fname'     => $name,
                 'lname'     => $location,

@@ -72,8 +72,8 @@
                                         <td><?php echo $singleData['student_age']; ?></td>
                                         <td><?php echo $singleData['student_location']; ?></td>
                                         <td><?php echo $singleData['student_gander']; ?></td>
-                                        <td><img class="user-img" src="./student-upload-image/<?php echo $singleData['student_img']; ?>" alt=""></td>
-                                        <td><a class="btn btn-info btn-sm" href="viwe.php?student_id=<?php echo $singleData['student_id']; ?>">Viwe</a><a class="btn btn-warning btn-sm" href="edite.php">Edite</a><a class="btn btn-danger btn-sm" href="delete.php">Delete</a></td>
+                                        <td><img class="user-img" src="./studentuploadimage/<?php echo $singleData['student_img']; ?>" alt=""></td>
+                                        <td><a class="btn btn-info btn-sm" href="viwe.php?student_id=<?php echo $singleData['student_id']; ?>">Viwe</a><a class="btn btn-warning btn-sm" href="edite.php">Edite</a><a  id='delete-btn' class="btn btn-danger btn-sm" href="delete.php?student_id_d=<?php echo $singleData['student_id']; ?>">Delete</a></td>
                                         <td><?php echo $singleData['status']; ?></td>
                                     </tr>
                                     <?php endwhile; ?>   
@@ -90,5 +90,16 @@
    
 
     <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <script>
+        $('a#delete-btn').click(function(){
+            let message = confirm('You Are Confirm To Delete Now');
+            if( message == true ){
+                return true;
+            }else{
+                return false;
+            }
+        });
+    </script>
 </body>
 </html>

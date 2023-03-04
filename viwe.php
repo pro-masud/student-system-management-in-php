@@ -22,6 +22,21 @@
 </head>
 <body>
 
+    <?php 
+
+        if( $_GET['student_id'] ){
+            $singleStudentData = $_GET['student_id'];
+        }
+
+        $sql = "SELECT * FROM students WHERE student_id = '$singleStudentData' ";
+       $data =  $connection -> query($sql);
+
+       $single_data = $data -> fetch_assoc();
+    
+    
+    ?>
+
+
     <div class="login-form">
         <div class="container">
             <div class="row">
@@ -30,33 +45,37 @@
                     <div class="card w-75 p-5">
                         <h2>Viwe Student Profile</h2>
                         <div class="card-header">
-                            <img style="display:block; margin:0 auto;" class="w-50" src="./images/user.png" alt="profile">
+                            <img style="display:block; margin:0 auto;" class="w-50" src="./studentuploadimage/<?php echo  $single_data['student_img'];?>" alt="profile">
                         </div>
                         <div class="card-body">
-                           <table class="table ">
+                           <table class="table table-striped">
                                 <tr>
                                     <td>Name</td>
-                                    <td>masud rana</td>
+                                    <td><?php echo  $single_data['student_name'];?></td>
                                 </tr>
                                 <tr>
-                                    <td>Name</td>
-                                    <td>masud rana</td>
+                                    <td>Email</td>
+                                    <td><?php echo  $single_data['student_email'];?></td>
                                 </tr>
                                 <tr>
-                                    <td>Name</td>
-                                    <td>masud rana</td>
+                                    <td>Cell</td>
+                                    <td><?php echo  $single_data['student_cell'];?></td>
                                 </tr>
                                 <tr>
-                                    <td>Name</td>
-                                    <td>masud rana</td>
+                                    <td>Age</td>
+                                    <td><?php echo  $single_data['student_age'];?></td>
                                 </tr>
                                 <tr>
-                                    <td>Name</td>
-                                    <td>masud rana</td>
+                                    <td>Gender</td>
+                                    <td><?php echo  $single_data['student_gander'];?></td>
                                 </tr>
                                 <tr>
-                                    <td>Name</td>
-                                    <td>masud rana</td>
+                                    <td>Location</td>
+                                    <td><?php echo  $single_data['student_location'];?></td>
+                                </tr>
+                                <tr>
+                                    <td>Status</td>
+                                    <td><?php echo  $single_data['status'];?></td>
                                 </tr>
                            </table>
                         </div>

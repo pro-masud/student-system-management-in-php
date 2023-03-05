@@ -7,7 +7,7 @@
     $studentOptions = ['Haripur','Chawarangi Bazar','Pahargong','Kamalpukur','ranisonkol'];
 
     // this form validation here
-    if( isset($submit)){
+    if( isset($_POST['submit'])){
 
         $name = filter_input(INPUT_POST,'name', FILTER_SANITIZE_STRING);
         $email = filter_input(INPUT_POST,'email', FILTER_SANITIZE_STRING);
@@ -21,7 +21,7 @@
             $gander = $_POST['gander']['0'];
         }
 
-        $location = filter_input(INPUT_POST,'location', FILTER_SANITIZE_STRING);
+        echo $location = trim(filter_input(INPUT_POST,'location', FILTER_SANITIZE_STRING),' ');
 
         $photos = $_FILES['image']['tmp_name'];
        
@@ -109,7 +109,7 @@
                                     
                                 </select>
 
-                                <label for="image" class="form-label">Cell</label>
+                                <label for="image" class="form-label">Photos</label>
                                 <input value="" name="image" type="file" class="form-control" id="image"><br>
 
                                 <input class="btn btn-info" name="submit" type="submit" value="Add Student">

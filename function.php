@@ -68,3 +68,5 @@ function studentImageUpload($file , $location = '', $file_format = ['png','jpg',
 }
 
 
+
+

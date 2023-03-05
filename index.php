@@ -51,18 +51,18 @@
                                <tbody class="table-striped">
                                 <?php 
                                 
-                                $search = '';
-                                if(isset($_POST['search-btn'])){
-                                   $search = $_POST['search'];
-                                }
+                                    $search = '';
+                                    if(isset($_POST['search-btn'])){
+                                    $search = $_POST['search'];
+                                    }
 
-                                //all student select here to data base
-                                $sql = "SELECT * FROM  students WHERE student_name LIKE '%$search%' ";
-                                $allStudentData = $connection -> query($sql);
+                                    //all student select here to data base
+                                    $sql = "SELECT * FROM  students WHERE student_name LIKE '%$search%' ";
+                                    $allStudentData = $connection -> query($sql);
 
-                            
-                                $i = 1;
-                                while( $singleData = $allStudentData -> fetch_assoc() ):
+                                
+                                    $i = 1;
+                                    while( $singleData = $allStudentData -> fetch_assoc() ):
                                 ?>
                                     <tr>
                                         <td><?php echo $i; $i++; ?></td>
@@ -73,10 +73,10 @@
                                         <td><?php echo $singleData['student_location']; ?></td>
                                         <td><?php echo $singleData['student_gander']; ?></td>
                                         <td><img class="user-img" src="./studentuploadimage/<?php echo $singleData['student_img']; ?>" alt=""></td>
-                                        <td><a class="btn btn-info btn-sm" href="viwe.php?student_id=<?php echo $singleData['student_id']; ?>">Viwe</a><a class="btn btn-warning btn-sm" href="edite.php">Edite</a><a  id='delete-btn' class="btn btn-danger btn-sm" href="delete.php?student_id_d=<?php echo $singleData['student_id']; ?>">Delete</a></td>
+                                        <td><a class="btn btn-info btn-sm" href="viwe.php?student_id=<?php echo $singleData['student_id']; ?>">Viwe</a><a class="btn btn-warning btn-sm" href="edite.php?student_id=<?php echo $singleData['student_id']; ?>">Edite</a><a  id='delete-btn' class="btn btn-danger btn-sm" href="delete.php?student_id_d=<?php echo $singleData['student_id']; ?>">Delete</a></td>
                                         <td><?php echo $singleData['status']; ?></td>
                                     </tr>
-                                    <?php endwhile; ?>   
+                                <?php endwhile; ?>   
                                </tbody>
                             </table>
                         </div>
